@@ -1,0 +1,29 @@
+Query 1:
+{
+  liquidityPools(where: {symbol: "USD Coin/Wrapped Ether"}) {
+    id
+    name
+    symbol
+  }
+}
+
+Query 2:
+{
+  swaps(
+    orderBy: timestamp
+    where: {pool: "0x397ff1542f962076d0bfe58ea045ffa2d347aca0"}
+    orderDirection: desc
+  ) {
+    amountIn
+    amountInUSD
+    amountOut
+    amountOutUSD
+    timestamp
+    tokenIn {
+      symbol
+    }
+    tokenOut {
+      symbol
+    }
+  }
+}
